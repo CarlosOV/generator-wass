@@ -1,0 +1,20 @@
+{
+  "name": "<%= name %>",
+  "description": "<%= description %>",
+  "main": "app.js",
+  "authors": [
+    "<%= author %>"
+  ],
+  "license": "<%= license %>",
+  "homepage": "<%= homepage %>",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sweetalert": "^1.1.3"
+  }
+}

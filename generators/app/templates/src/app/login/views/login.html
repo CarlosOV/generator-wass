@@ -1,0 +1,37 @@
+<div class="login-container" >
+    <div class="login-wrapper">
+        <div class="login">
+            <h1 class="login__title">SISTEMA EXAMPLE</h1>
+            <div class="panel-body">
+
+                <form role="form" name="formLogin" ng-submit="login.login(login.acceso)" novalidate>
+                    <fieldset>
+                        <div class="texto-validacion text-center {{login.clase}}">
+                            {{login.mensaje}}
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input class="form-control" placeholder="Usuario" type="text" autofocus ng-model="login.acceso.usuario" name="usuario" required="">
+                                <span class="input-group-addon" id="basic-addon2">{{login.acceso.emailSuffix}}</span>
+                            </div>
+                            <div ng-show="formLogin.$submitted || formLogin.usuario.$touched">
+                                <span class="texto-validacion" ng-show="formLogin.usuario.$error.required">Ingrese su usuario.</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Contrase&#241;a" type="password" ng-model="login.acceso.password" name="password" required="">
+                            <div ng-show="formLogin.$submitted || formLogin.password.$touched">
+                                <span class="texto-validacion" ng-show="formLogin.password.$error.required">Ingrese su contraseña.</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-success btn-block" ng-disabled="!formLogin.$valid" >INGRESAR</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="login-logo">
+        <img ng-src="{{login.acceso.logo}}" alt="">
+    </div>
+</div>

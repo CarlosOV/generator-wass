@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Carlos Ormeño",
+      "authorEmail": "ormenovargasc@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}

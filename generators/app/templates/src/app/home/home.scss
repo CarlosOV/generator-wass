@@ -1,0 +1,155 @@
+body {
+  padding-top: 50px;
+}
+
+/*
+ * Global add-ons
+ */
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+
+.float-right{
+  float: right;
+}
+
+@media ( min-width : 768px) {
+  .sidebar {
+    position: fixed;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+
+.nav-sidebar>li>a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.nav-sidebar>.active>a, .nav-sidebar>.active>a:hover, .nav-sidebar>.active>a:focus
+{
+  color: #fff;
+  background-color: #428bca;
+}
+
+.nav-sidebar>.title>a, .nav-sidebar>.title>a:hover, .nav-sidebar>.title>a:focus
+{
+  color: #ddd;
+  background-color: #283D50;
+}
+
+text-bold{
+  font-weight: bold;
+}
+
+.table-responsive th{
+  background-color: rgb(45,50,62);
+  color: #fff;
+}
+
+.table>tbody>tr.success>td, .table>tbody>tr.success>th, .table>tbody>tr>td.success, .table>tbody>tr>th.success, .table>tfoot>tr.success>td, .table>tfoot>tr.success>th, .table>tfoot>tr>td.success, .table>tfoot>tr>th.success, .table>thead>tr.success>td, .table>thead>tr.success>th, .table>thead>tr>td.success, .table>thead>tr>th.success {
+  background-color: #5cb85c!important;
+  color: #f2f2f2!important;
+}
+
+.table>tbody>tr.danger>td, .table>tbody>tr.danger>th, .table>tbody>tr>td.danger, .table>tbody>tr>th.danger, .table>tfoot>tr.danger>td, .table>tfoot>tr.danger>th, .table>tfoot>tr>td.danger, .table>tfoot>tr>th.danger, .table>thead>tr.danger>td, .table>thead>tr.danger>th, .table>thead>tr>td.danger, .table>thead>tr>th.danger{
+  background-color: #d9534f!important;
+  color: #f2f2f2!important;
+}
+
+@media ( min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 30px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* Scrollable contents if viewport is shorter than content. */
+    background-color: rgb(45,50,62);
+    /*border-right: 1px solid rgb(45,50,62);*/
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.opcion > a{
+  padding-left: 20% !important;
+  color: #fefefe;
+}
+
+.opcion.active > a{
+  box-shadow: none!important;
+}
+
+.nav>li>a:focus, .nav>li>a:hover{
+  background-color: inherit;
+  box-shadow: inset 0 0 0 1000px rgba(255,255,255,.1);
+}
+
+.nav-sidebar > .active > a, .nav-sidebar > .active > a:hover, .nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: rgba(255,91,87,1);
+}
+
+.nav-sidebar > .title > a, .nav-sidebar > .title > a:hover, .nav-sidebar > .title > a:focus {
+  color: #ddd;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.1);
+  background-color: inherit;
+}
+
+.menu-right{
+  padding: 12px 15px;
+}
+
+.menu-right a{
+  font-size: 18px;
+  color: rgba(255,91,87,1);
+}
