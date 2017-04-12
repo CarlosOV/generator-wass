@@ -1,3 +1,6 @@
+/**
+ * Created by Programador RRHH-2.
+ */
 var module = angular.module('LoginModule', []);
 
 import loginTpl from './views/login.html';

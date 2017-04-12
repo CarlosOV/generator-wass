@@ -1,3 +1,6 @@
+/**
+ * Created by Programador RRHH-2.
+ */
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -37,28 +40,32 @@ module.exports =
     },
     module: {
         loaders: [
-            {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                loaders: ['ng-annotate', 'babel-loader?presets[]=es2015'],
-                cacheable: true
-            },
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('css!resolve-url!sass?sourceMap')
-            },
-            {
-                test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: "url-loader?limit=10000&mimetype=application/font-woff"
-            },
-            {
-                test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: "file-loader"
-            },
-            {   test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-                loader: "file-loader"
-            },
-            {test: /\.html$/, loader: "html"},]
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          loaders: ['ng-annotate', 'babel-loader?presets[]=es2015'],
+          cacheable: true
+        },
+        {
+          test: /\.scss$/,
+          loader: ExtractTextPlugin.extract('css!resolve-url!sass?sourceMap')
+        },
+        {
+          test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: "url-loader?limit=10000&mimetype=application/font-woff"
+        },
+        {
+          test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: "file-loader"
+        },
+        {
+          test: /\.wav$|\.mp3$/,
+          loader: "file-loader"
+        },
+        {   test: /\.jpe?g$|\.gif$|\.png$/,
+          loader: "<%= imageloader %>"
+        },
+        {test: /\.html$/, loader: "html"},]
     },
     plugins: [
         new ExtractTextPlugin('app.min.css',

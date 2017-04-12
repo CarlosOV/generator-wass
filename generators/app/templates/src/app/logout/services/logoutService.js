@@ -1,3 +1,6 @@
+/**
+ * Created by Programador RRHH-2.
+ */
 class LogoutService{
     // @ngInject
     constructor($state, config, localStorageService, Notification){

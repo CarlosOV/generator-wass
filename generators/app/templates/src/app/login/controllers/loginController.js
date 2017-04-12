@@ -1,3 +1,6 @@
+/**
+ * Created by Programador RRHH-2.
+ */
 class LoginController {
     // @ngInject
     constructor($state, authService, Notification, SweetAlert, logoutService){

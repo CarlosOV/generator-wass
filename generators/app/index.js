@@ -1,3 +1,6 @@
+/**
+ * Created by Programador RRHH-2.
+ */
 'use strict';
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
@@ -10,7 +13,7 @@ module.exports = class extends Generator {
       'Welcome to tavern, we will drink ' + chalk.red( 'Beers')
     ));
 
-    var prompts = [
+    const prompts = [
       {
         type: 'input',
         name: 'projectName',
@@ -63,6 +66,12 @@ module.exports = class extends Generator {
         name: 'port',
         message: 'Port for development server',
         default: "43040"
+      },
+      {
+        type: 'confirm',
+        name: 'imageLoader',
+        message: 'Load images with base64?',
+        default: true
       }
     ];
 
@@ -107,7 +116,7 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('src/_index.html'),
       this.destinationPath('src/index.html'),{
-        title: this.props.title,
+        title: this.props.title
       }
     );
 
@@ -134,10 +143,14 @@ module.exports = class extends Generator {
       }
     );
 
+
+    var imageLoader = "file-loader";
+    if(this.props.imageLoader) imageLoader="base64-image-loader";
     this.fs.copyTpl(
       this.templatePath('_webpack.config.js'),
       this.destinationPath('webpack.config.js'),{
-        dist: this.props.dist
+        dist: this.props.dist,
+        imageloader: imageLoader
       }
     );
 

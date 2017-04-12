@@ -1,3 +1,6 @@
+/**
+ * Created by Programador RRHH-2.
+ */
 window.jQuery = require('jquery');
 
 require('bootstrap-sass');

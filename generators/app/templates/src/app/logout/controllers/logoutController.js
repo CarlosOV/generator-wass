@@ -1,3 +1,6 @@
+/**
+ * Created by Programador RRHH-2.
+ */
 class LogoutController {
     // @ngInject
     constructor(logoutService){

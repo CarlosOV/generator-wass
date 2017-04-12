@@ -1,3 +1,6 @@
+/**
+ * Created by Programador RRHH-2.
+ */
 class AuthService{
     // @ngInject
     constructor(localStorageService,$q,config,$state){
