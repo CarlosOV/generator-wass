@@ -7,6 +7,8 @@
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
+const Util = require('../../Util');
+const constants = require('../../Constants');
 
 module.exports = class extends Generator {
 
@@ -20,35 +22,81 @@ module.exports = class extends Generator {
     }
 
     this.log(yosay(
-      'Welcome back to tavern, we will drink ' + chalk.red( 'More Beers')
+      'Welcome back to tavern, we will drink ' + chalk.red( 'More Vodka')
     ));
+
+
+    this.pathArr = [this.getBasePath()];
 
     this.prompts = [
       {
         type: 'list',
         name: 'someAnswer',
         message: 'Would you like to enable this option?',
-        choices: ['opt1', 'opt2']
+        choices: this.getChoices()
       }
     ];
 
+    console.log("before ask: ",this.pathArr)
     return this.askForPath();
   }
 
-  askForPath(){
+  askForPath(final){
+
+    console.log("in ask: ",this.pathArr)
+    if(final){
+      this.pathArr.push("");
+      console.log("final--------------")
+      return ;}
 
     return this.prompt(this.prompts).then(props => {
 
       this.props = props;
-      if(!this.isSetPath){
-        return this.askForPath();
+      if(props.someAnswer == constants.HERE){
+        console.log("HERE");
+        final = true;
       }
+      else if(props.someAnswer == constants.UPLEVEL){
+        console.log("UPLEVEL");
+        this.removeLevel();
+      }
+      else{
+        this.addLevel(props.someAnswer);
+      }
+
+      this.prompts[0].choices = this.getChoices();
+      console.log("return ask: ",this.pathArr);
+      if(final){
+        return ;
+      }
+      return this.askForPath(final);
 
     });
   }
 
-  writing() {
+  getBasePath(){
+    return process.cwd()+'\\src\\app';
+  }
 
+  removeLevel(){
+    if(this.pathArr.length > 0){
+      return this.pathArr.pop();
+    }
+  }
+
+  addLevel(level){
+    return this.pathArr.push(level);
+  }
+
+  getChoices(){
+    return Util.setDefaultOptions(Util.getDirectories(this.pathArr), this.pathArr.length <= 1);
+  }
+
+  writing() {
+    this.pathArr.pop();
+
+    console.log("writing");
+    console.log("this.pathArr: ", this.pathArr);
   }
 
   install() {

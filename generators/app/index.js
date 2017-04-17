@@ -10,7 +10,7 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to tavern, we will drink ' + chalk.red( 'Beers')
+      'Welcome to tavern, we will drink ' + chalk.red( 'Vodka')
     ));
 
     const prompts = [
