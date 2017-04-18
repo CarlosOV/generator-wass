@@ -52,6 +52,25 @@ module.exports = {
     }
     arr.push(new inquirer.Separator());
     return arr;
+  },
+
+  getPathModule(pathArr ,pathChild){
+    let pathChildArr = pathChild.split("/");
+    let path = this.getPathFromArray(pathArr);
+    for(let i=0; i<pathChildArr.length; i++){
+      path += "\\"+pathChildArr[i];
+    }
+    return path;
+  },
+
+  toUpperCamelCase(word){
+    word = word.charAt(0).toUpperCase()+word.slice(1);
+    return word;
+  },
+
+  toLowerCamelCase(word){
+    word = word.charAt(0).toLowerCase()+word.slice(1);
+    return word;
   }
 
 };

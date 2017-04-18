@@ -75,12 +75,62 @@ module.exports = class extends Generator {
 
   writing() {
     this.pathArr.pop();
+    let nameModule = this.name;
+    let nameModuleUpperCamelCase = Util.toUpperCamelCase(this.name);
+    let nameModuleLowerCamelCase = Util.toLowerCamelCase(this.name);
+
+    let pathModule = this.name+"/"+this.name+"Module.js";
+    this.fs.copyTpl(
+      this.templatePath('module/_Module.js'),
+      Util.getPathModule(this.pathArr, pathModule),{
+        name: nameModule,
+        nameLowerCamelCase: nameModuleLowerCamelCase,
+        nameUpperCamelCase: nameModuleUpperCamelCase
+      }
+    );
+
+    let pathController = this.name+"/controllers/"+this.name+"Controller.js";
+    this.fs.copyTpl(
+      this.templatePath('module/controllers/_Controller.js'),
+      Util.getPathModule(this.pathArr, pathController),{
+        name: nameModule,
+        nameLowerCamelCase: nameModuleLowerCamelCase,
+        nameUpperCamelCase: nameModuleUpperCamelCase
+      }
+    );
+
+    let pathFactory = this.name+"/services/"+this.name+"Factory.js";
+    this.fs.copyTpl(
+      this.templatePath('module/services/_Factory.js'),
+      Util.getPathModule(this.pathArr, pathFactory),{
+        name: nameModule,
+        nameLowerCamelCase: nameModuleLowerCamelCase,
+        nameUpperCamelCase: nameModuleUpperCamelCase
+      }
+    );
 
 
-    console.log("Path: ", chalk.cyan(path));
+    let pathView = this.name+"/views/"+this.name+".html";
+    this.fs.copyTpl(
+      this.templatePath('module/views/module.html'),
+      Util.getPathModule(this.pathArr, pathView),{
+        name: nameModule,
+        nameLowerCamelCase: nameModuleLowerCamelCase,
+        nameUpperCamelCase: nameModuleUpperCamelCase
+      }
+    );
+
+    let pathStyle = this.name+"/"+this.name+".scss";
+    this.fs.copyTpl(
+      this.templatePath('module/module.scss'),
+      Util.getPathModule(this.pathArr, pathStyle),{
+        name: nameModule,
+        nameLowerCamelCase: nameModuleLowerCamelCase,
+        nameUpperCamelCase: nameModuleUpperCamelCase
+      }
+    );
 
     console.log("writing");
-    console.log("this.pathArr: ", this.pathArr);
   }
 
   install() {

@@ -11,7 +11,7 @@ module.config(function ($stateProvider, $urlRouterProvider) {
     "ngInject";
 
     $stateProvider
-        .state('<%= >', {
+        .state('<%= name %>', {
             url: '/<%= nameLowerCamelCase %>',
             views: {
                 '@': {

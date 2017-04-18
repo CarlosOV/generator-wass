@@ -11,4 +11,4 @@ class <%= nameUpperCamelCase %>Controller {
 
 }
 
-export default <%= nameUpperCase %>Controller;
+export default <%= nameUpperCamelCase %>Controller;
