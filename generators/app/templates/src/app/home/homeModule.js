@@ -2,7 +2,7 @@
  * Created by Programador RRHH-2.
  */
 var module = angular.module('HomeModule', [
-
+  //import modules
 ]);
 
 import homeTpl from './views/home.html';

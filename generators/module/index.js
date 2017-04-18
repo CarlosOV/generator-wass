@@ -30,7 +30,7 @@ module.exports = class extends Generator {
       {
         type: 'list',
         name: 'someAnswer',
-        message: 'Would you like to enable this option?',
+        message: 'Find parent module:',
         choices: Util.getChoices(this.pathArr)
       }
     ];

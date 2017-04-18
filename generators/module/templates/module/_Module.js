@@ -1,4 +1,6 @@
-var module = angular.module('<%= nameUpperCamelCase %>Module', []);
+var module = angular.module('<%= nameUpperCamelCase %>Module', [
+  //import modules
+]);
 
 import <%= nameLowerCamelCase %>Tpl from './views/<%= nameLowerCamelCase %>.html';
 import <%= nameLowerCamelCase %>Ctrl from './controllers/<%= nameLowerCamelCase %>Controller';

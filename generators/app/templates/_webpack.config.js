@@ -1,5 +1,5 @@
 /**
- * Created by Programador RRHH-2.
+ * Created by Programador RRHH-2. ZSLCD
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");

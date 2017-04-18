@@ -31,6 +31,7 @@ var App = angular.module('App', [
     'LoginModule',
     'LogoutModule',
     'HomeModule'
+     //import modules
 ]);
 
 App.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {

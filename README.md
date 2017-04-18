@@ -1,6 +1,32 @@
 # generator-wass [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Generator for Angular with States, Webapck and Sass
 
+## Description
+
+This generator will scaffold for you an application using angularjs, webpack, angular-ui-boostrap, angular-ui-notification.
+
+* Generate module with structure:
+
+```
+example/
+├── controllers/
+|   ├── exampleController.js         // main controller in module
+|   └── otherController.js           // other controllers, not generated
+├── services/
+|   ├── exampleFactory.js            // main factory in module
+|   └── otherService.js              // other services, not generated
+├── views/
+|   ├── example.html                 // main view in module
+|   └── other.html                   // other views, not generated
+├── modules/
+|   └── child                        // childs modules 
+|       └── ...  
+├── exampleModule.js                 // module, need imort in parent
+└── example.scss                     // sass for module's styles
+```
+
+Support Es6 using babel.
+
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-wass using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
@@ -10,18 +36,26 @@ npm install -g yo
 npm install -g generator-wass
 ```
 
-Then generate your new project:
+## Usage
+
+Make a new directory, and cd into it:
 
 ```bash
-yo wass
+mkdir new-app
+cd new-app
 ```
 
-## Getting To Know Yeoman
+Run `yo wacs`, optionally pass app name:
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+```bash
+yo wass [appName]
+```
+
+Generate module, find parent module:
+
+```bash
+yo wass:module appModule
+```
 
 ## License
 

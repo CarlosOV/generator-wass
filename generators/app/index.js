@@ -13,34 +13,37 @@ module.exports = class extends Generator {
       'Welcome to tavern, we will drink ' + chalk.red( 'Vodka')
     ));
 
+    this.name = this.args[0];
+
     const prompts = [
       {
         type: 'input',
         name: 'projectName',
-        message: 'Project name',
-        default: this.appname
+        message: 'Project name:',
+        default: this.appname,
+        when: !this.name
       },
       {
         type: 'input',
         name: 'description',
-        message: 'Description'
+        message: 'Description:'
       },
       {
         type: 'input',
         name: 'homepage',
-        message: 'Homepagge url',
+        message: 'Homepagge url:',
         default: ""
       },
       {
         type: 'input',
         name: 'author',
-        message: 'Author',
+        message: 'Author:',
         default: "Anonymous"
       },
       {
         type: 'input',
         name: 'license',
-        message: 'License',
+        message: 'License:',
         default: "MIT"
       },
       {
@@ -52,25 +55,25 @@ module.exports = class extends Generator {
       {
         type: 'input',
         name: 'title',
-        message: 'Uhmm title in html',
+        message: 'Uhmm title in html:',
         default: "App"
       },
       {
         type: 'input',
         name: 'dist',
-        message: 'Relative path for generate dist files',
+        message: 'Relative path for generate dist files:',
         default: "./dist"
       },
       {
         type: 'input',
         name: 'port',
-        message: 'Port for development server',
+        message: 'Port for development server:',
         default: "43040"
       },
       {
         type: 'confirm',
         name: 'imageLoader',
-        message: 'Load images with base64?',
+        message: 'Load images with base64?:',
         default: true
       }
     ];
@@ -78,6 +81,9 @@ module.exports = class extends Generator {
     return this.prompt(prompts).then(props => {
       // To access props later use this.props.someAnswer;
       this.props = props;
+      if(this.name){
+        this.props.projectName = this.name;
+      }
     });
   }
 
