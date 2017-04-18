@@ -9,9 +9,22 @@ const constants = require('./Constants');
 
 module.exports = {
 
+  removeLevel(pathArr){
+    if(pathArr.length > 0){
+      return pathArr.pop();
+    }
+  },
+
+  addLevel(pathArr, level){
+    return pathArr.push(level);
+  },
+
+  getChoices(pathArr){
+    return this.setDefaultOptions(this.getDirectories(pathArr), pathArr.length <= 1);
+  },
+
   getDirectories(arrPath){
     let srcPath = this.getPathFromArray(arrPath);
-    console.log("srcPath: ", srcPath)
     try {
       return fs.readdirSync(srcPath)
         .filter(file => fs.statSync(path.join(srcPath, file)).isDirectory());

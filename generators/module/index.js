@@ -33,7 +33,7 @@ module.exports = class extends Generator {
         type: 'list',
         name: 'someAnswer',
         message: 'Would you like to enable this option?',
-        choices: this.getChoices()
+        choices: Util.getChoices(this.pathArr)
       }
     ];
 
@@ -43,29 +43,26 @@ module.exports = class extends Generator {
 
   askForPath(final){
 
-    console.log("in ask: ",this.pathArr)
     if(final){
       this.pathArr.push("");
-      console.log("final--------------")
-      return ;}
+      return ;
+    }
 
     return this.prompt(this.prompts).then(props => {
 
       this.props = props;
       if(props.someAnswer == constants.HERE){
-        console.log("HERE");
         final = true;
       }
       else if(props.someAnswer == constants.UPLEVEL){
-        console.log("UPLEVEL");
-        this.removeLevel();
+        Util.removeLevel(this.pathArr);
       }
       else{
-        this.addLevel(props.someAnswer);
+        this.addLevel(this.addLevel, props.someAnswer);
       }
 
-      this.prompts[0].choices = this.getChoices();
-      console.log("return ask: ",this.pathArr);
+      this.prompts[0].choices = Util.getChoices(this.pathArr);
+
       if(final){
         return ;
       }
@@ -76,20 +73,6 @@ module.exports = class extends Generator {
 
   getBasePath(){
     return process.cwd()+'\\src\\app';
-  }
-
-  removeLevel(){
-    if(this.pathArr.length > 0){
-      return this.pathArr.pop();
-    }
-  }
-
-  addLevel(level){
-    return this.pathArr.push(level);
-  }
-
-  getChoices(){
-    return Util.setDefaultOptions(Util.getDirectories(this.pathArr), this.pathArr.length <= 1);
   }
 
   writing() {
