@@ -21,7 +21,7 @@ example/
 ├── modules/
 |   └── child                        // childs modules 
 |       └── ...  
-├── exampleModule.js                 // module, need imort in parent
+├── exampleModule.js                 // module, need import in parent
 └── example.scss                     // sass for module's styles
 ```
 
@@ -45,7 +45,7 @@ mkdir new-app
 cd new-app
 ```
 
-Run `yo wacs`, optionally pass app name:
+Run `yo wass`, optionally pass app name:
 
 ```bash
 yo wass [appName]
@@ -84,7 +84,7 @@ npm run production
 
 ## License
 
-MIT © [Carlos Ormeño](https://github.com/carlosov)
+MIT © [Carlos Ormeño](https://github.com/carlosov) - [Quipucamayoc RRHH](http://quipucamayoc.unmsm.edu.pe/portal/)
 
 
 [npm-image]: https://badge.fury.io/js/generator-wass.svg
