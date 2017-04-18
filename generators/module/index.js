@@ -1,8 +1,6 @@
 /**
  * Created by Programador RRHH-2.
  */
-// Link para ver como jalar el path
-// http://stackoverflow.com/questions/18112204/get-all-directories-within-directory-nodejs
 'use strict';
 const Generator = require('yeoman-generator');
 const chalk = require('chalk');
@@ -58,7 +56,7 @@ module.exports = class extends Generator {
         Util.removeLevel(this.pathArr);
       }
       else{
-        this.addLevel(this.addLevel, props.someAnswer);
+        Util.addLevel(this.pathArr, props.someAnswer);
       }
 
       this.prompts[0].choices = Util.getChoices(this.pathArr);
@@ -77,6 +75,9 @@ module.exports = class extends Generator {
 
   writing() {
     this.pathArr.pop();
+
+
+    console.log("Path: ", chalk.cyan(path));
 
     console.log("writing");
     console.log("this.pathArr: ", this.pathArr);
