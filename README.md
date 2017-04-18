@@ -54,12 +54,37 @@ yo wass [appName]
 Generate module, find parent module:
 
 ```bash
-yo wass:module appModule
+yo wass:module example
+```
+
+Import module:
+
+We need import module in parent module, fixing in progress.
+
+```bash
+import './modules/example/exampleModule';
+
+var module = angular.module('ParentModule', [
+  //import modules
+    'ExampleModule'
+]);
+```
+
+Run Webpack server for develop:
+
+```bash
+npm start
+```
+
+Generate dist:
+
+```bash
+npm run production
 ```
 
 ## License
 
-MIT © [Carlos Ormeño]()
+MIT © [Carlos Ormeño](https://github.com/carlosov)
 
 
 [npm-image]: https://badge.fury.io/js/generator-wass.svg
