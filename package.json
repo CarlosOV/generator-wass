@@ -1,6 +1,6 @@
 {
   "name": "generator-wass",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generator for Angular with States, Webapck and Sass",
   "homepage": "",
   "author": {

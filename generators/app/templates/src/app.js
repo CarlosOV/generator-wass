@@ -7,7 +7,7 @@ require('bootstrap-sass');
 import 'angular';
 import 'angular-ui-router';
 import 'angular-resource';
-import '../node_modules/angular-ui-bootstrap/dist/ui-bootstrap';
+import '../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls';
 import '../node_modules/angular-ui-notification/dist/angular-ui-notification.min';
 import '../bower_components/sweetalert/dist/sweetalert.min';
 import '../node_modules/ng-sweet-alert/ng-sweet-alert';
@@ -23,6 +23,7 @@ import './app/home/homeModule';
 
 var App = angular.module('App', [
     'ng-sweet-alert',
+    'ui.bootstrap',
     'ui.router',
     'ui-notification',
     'ngResource',

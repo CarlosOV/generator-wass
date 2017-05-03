@@ -5,6 +5,22 @@
 
 This generator will scaffold for you an application using angularjs, webpack, angular-ui-boostrap, angular-ui-notification.
 
+* Structure
+
+```
+src/
+├── app/
+|   ├── generic                     // module generic
+|   ├── home                        // module home
+|   ├── login                       // module login
+|   └── logout                      // module logout
+├── img/                            // images
+├── libs/                           // custom libs
+├── app.js                          // main module
+├── app.scss                        // main sass sheet
+└── index.html                      // main html
+```
+
 * Generate module with structure:
 
 ```
