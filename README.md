@@ -45,11 +45,10 @@ Support Es6 using babel.
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-wass using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io), [bower](https://bower.io/) and generator-wass using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
-npm install -g yo
-npm install -g generator-wass
+npm install -g yo bower generator-wass
 ```
 
 ## Usage
@@ -97,6 +96,10 @@ Generate dist:
 ```bash
 npm run production
 ```
+
+## Release History
+
+* 28/06/2017 - v0.1.3 - Change Readme adding dependency bower, Fixed error in create module (Error: Cannont find module '../../Util')
 
 ## License
 
