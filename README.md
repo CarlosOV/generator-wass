@@ -100,6 +100,7 @@ npm run production
 ## Release History
 
 * 28/06/2017 - v0.1.3 - Change Readme adding dependency bower, Fixed error in create module (Error: Cannont find module '../../Util')
+* 28/06/2017 - v0.1.4 - Fixed error in create module (Error: Cannont find module '../../Constants')
 
 ## License
 

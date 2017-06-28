@@ -6,7 +6,7 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
 const Util = require('../Util');
-const constants = require('../../Constants');
+const constants = require('../Constants');
 
 module.exports = class extends Generator {
 

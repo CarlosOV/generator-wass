@@ -5,7 +5,7 @@
 const fs = require('fs');
 const path = require('path');
 const inquirer = require('inquirer');
-const constants = require('./../Constants');
+const constants = require('./Constants');
 
 module.exports = {
 
